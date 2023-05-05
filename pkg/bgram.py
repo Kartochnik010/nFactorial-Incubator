@@ -2,7 +2,6 @@ import random
 from collections import defaultdict
 
 
-
 def train(dataset):
     # Создаем словарь для хранения пар букв и их частотности
     bigram_counts = defaultdict(int)
@@ -61,29 +60,11 @@ def generate_name(bi_probs):
     return name
 
 
-# Open the file
-with open('names.txt', 'r') as file:
-    # Get all lines as a list
-    names_list = file.read().split('\n')
-    # Remove the last element, which is empty due to the final newline character
-    names_list.pop()
-
-bigram_probs = train(names_list)
-print(generate_name(bigram_probs))
-print(generate_name(bigram_probs))
-print(generate_name(bigram_probs))
-print(generate_name(bigram_probs))
-print(generate_name(bigram_probs))
-print(generate_name(bigram_probs))
-print(generate_name(bigram_probs))
-print(generate_name(bigram_probs))
-print(generate_name(bigram_probs))
-print(generate_name(bigram_probs))
-print(generate_name(bigram_probs))
-print(generate_name(bigram_probs))
-
-# bigram = [(names_list[i], names_list[i + 1])
-#            for i in range(len(names_list) - 1)]
-# print(bigram[0][1])
-# print(bigram[1])
-# print(bigram)
+def get_names(file_name):
+    # Open the file
+    with open(file_name, 'r') as file:
+        # Get all lines as a list
+        names_list = file.read().split('\n')
+        # Remove the last element, which is empty due to the final newline character
+        names_list.pop()
+        return names_list
